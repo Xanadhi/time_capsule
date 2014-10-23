@@ -17,7 +17,44 @@
 
   <title></title>
 </head>
+
 <body>
+<header id="topbar">
+  <div>
+    <a href="/"></a>
+  </div>
+<% unless current_user.nil? %> 
+    <form autocomplete="off" action="/logout" method="post">
+      <input type="submit" value="logout"/ style="vertical-align:bottom;width:100px;">
+    </form>
+<% else %>
+  <form action="/login" method="post">
+    <div>
+      <div>
+        <input
+        type="text"
+        name="name" 
+        placeholder="name"
+        id="login"
+        tabindex="1"/>
+        <input 
+        type="submit" 
+        style="display:none"/>
+        <button onclick="window.open('/signup','_top');return false; ">Login</button>
+      </div>
+      <div>
+        <input
+        type="password"
+        name="password" 
+        placeholder="*****"
+        tabindex="2"/>
+        <input type="submit" style="display:none"/>
+
+        <button onclick="window.open('/signup/','_top');return false; ">Logout</button>
+      </div>
+    </div>
+  </form>
+<% end %>
   <%= yield %>
 </body>
 </html>
