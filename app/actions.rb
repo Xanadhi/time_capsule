@@ -50,7 +50,21 @@ get '/user_session/logout' do
 end
 
 
-# Create capsule
+# View a specific user
+get '/users/:id' do
+end
+
+# TODO: User can edit account information
+
+# Create a new capsule (this is going to be part of the home page)
+post '/capsules' do
+end
+
+
+# View a specific capsule that belongs to the user
+get '/users/:id/capsules/:id' do
+end
+
 
 # helpers
 
