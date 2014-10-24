@@ -3,7 +3,7 @@ get '/' do
   erb :index
 end
 
-# SignUp action
+# Sign up action
 
 get '/users/new' do
   erb :'users/new'
@@ -24,7 +24,7 @@ post '/users' do
   end
 end
 
-# Login action
+# Log in action
 # Singular REST resource. Good example.
 get '/user_session/new' do
   erb :'user_session/new'
@@ -42,13 +42,19 @@ post '/user_session' do
   end
 end
 
-# Logout action
+# Log out action
 # delete '/user_session'
 get '/user_session/logout' do
   session.clear
   redirect '/'
 end
 
+
+# User actions
+
+get '/users' do
+  erb :'users/index'
+end
 
 # View a specific user
 get '/users/:id' do
@@ -65,6 +71,8 @@ end
 
 # TODO: User can edit account information
 
+# Capsule actions
+
 # Create a new capsule (this is going to be part of the home page)
 post '/capsules' do
 end
@@ -75,7 +83,7 @@ get '/users/:id/capsules/:id' do
 end
 
 
-# helpers
+# Helpers
 
 helpers do
   def current_user
