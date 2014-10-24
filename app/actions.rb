@@ -50,7 +50,7 @@ get '/user_session/logout' do
 end
 
 
-# User actions
+# User profile actions
 
 get '/users' do
   erb :'users/index'
