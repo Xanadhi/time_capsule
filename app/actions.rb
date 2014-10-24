@@ -52,7 +52,16 @@ end
 
 # View a specific user
 get '/users/:id' do
+  @user = User.where(user_id: session[:user_id])
+  erb :'user/show'
 end
+
+patch '/users/:id' do
+  user = User.find(x)
+  user.password = abc
+  user.save
+end
+
 
 # TODO: User can edit account information
 

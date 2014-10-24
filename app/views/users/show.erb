@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-6">
+    <p>Hello <%= @user.name %></p>
+    <p><%= @user.email %></p>
+    <p><a href="/">update account information</a></p>
+  </div>
+  <div class="col-md-6">
+    <p>Capsules awaiting launch:</p>
+  </div>
+</div>
+
+<div class="row">
+<% @capsules.each do |capsule| %>
+  <div class="col-md-4">
+  <%= capsule.created_on %>
+  </div>
+</div>
