@@ -94,11 +94,11 @@ $(document).ready(function(){
   // pop-up window if text match
   // function() {
     var counter = 0;
-    $("#wysihtml5-textarea").keyup(function(){
+    $("#editor1").keyup(function(){
       WORDS.forEach(function(word){
    
         // var trackX = []
-        x = $("#wysihtml5-textarea").val().toUpperCase().search(word);
+        x = $("#editor1").val().toUpperCase().search(word);
         // console.log('find?:  ' +x);
         if(x != -1){
           counter += 1;
