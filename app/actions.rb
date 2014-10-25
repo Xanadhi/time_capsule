@@ -52,17 +52,17 @@ end
 
 
 # Create capsule
+get '/capsules' do
+  @capsule = Capsule.new
+  erb :'capsules/new'
+end
+
 post '/capsules' do
   @capsule = Capsule.new(
   letter: params[:editor1]
   )
   @capsule.save
   redirect '/capsules'
-end
-
-get '/capsules' do
-  @capsule = Capsule.new
-  erb :'capsules/new'
 end
 
 get '/users' do
@@ -92,8 +92,7 @@ end
 
 
 # View a specific capsule that belongs to the user
-get '/users/:id/capsules/:id' do
-end
+
 
 
 # Helpers
