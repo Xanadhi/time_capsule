@@ -1,8 +1,9 @@
 body { 
   padding-top: 70px;
-  background-image: url('http://i.imgur.com/0iujfE0.jpg');
+  font-family: 'Lora', serif;
+  background: url('http://i.imgur.com/0iujfE0.jpg') no-repeat right top;
+  background-attachment: fixed;
   background-size: 100%;
-  background-repeat: no-repeat;
   background-color: #ECECEC;
 }
 
@@ -15,6 +16,7 @@ body {
 }
 
 .btn-default {
+  font-family: 'Lora', serif;
   color: #99CCFF;
   background-color: rgba(225,225,225,0.2);
   border-color: transparent;
@@ -42,6 +44,11 @@ body {
 
 .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
   color: #99CCFF;
+  font-family: 'Lora', serif;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
+  color: #CCCC00;
 }
 
 .navbar-default {
