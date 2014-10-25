@@ -94,6 +94,11 @@ end
 # View a specific capsule that belongs to the user
 
 
+# Run Claira
+
+get '/claira' do
+  erb :'/claira'
+end
 
 # Helpers
 
