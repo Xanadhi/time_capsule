@@ -8,20 +8,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Claira</a> 
+      <a class="navbar-brand" href="/">Claira</a> 
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">About</a></li>
-
-      <form action="/user_session" method="post" class="navbar-form navbar-right" role="login">
-      <div class="form-group">
-      <input type="text" class="form-control input-sm login_form" placeholder="email">
-       <input type="password" class="form-control input-sm login_form" placeholder="password">
-      </div>
-      <button type="submit" class="form-control">Log in</button>
-      </form>
 
       <li class="dropdown">
        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create account</a>
@@ -35,6 +27,14 @@
           </form></li>
         </ul>
       </li>
+
+      <form action="/user_session" method="post" class="navbar-form navbar-right" role="login">
+      <div class="form-group">
+      <input type="text" class="form-control input-sm login_form transparent-input" placeholder="email">
+       <input type="password" class="form-control input-sm login_form transparent-input" placeholder="password">
+      </div>
+      <button type="submit" class="btn btn-default btn-sm">Log in</button>
+      </form>
 
     </ul>
     </div>
