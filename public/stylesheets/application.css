@@ -1,9 +1,34 @@
 body { 
   padding-top: 70px;
+  background-image: url('http://i.imgur.com/dFyw1N8.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
+/* main-wrapper holds the main content of the app */
+
 .main-wrapper {
+  margin: auto;
+  background-color: rgba(42,42,42,0.5);
+  border-radius: 15px;
   width: 60%;
-  outline: 1px dotted black;
   padding: 1em;
+}
+
+.main-wrapper p {
+  color: rgba(225,225,225,1);
+}
+
+/* Navbar Styling */
+
+.nav-transparent {
+  background-color: rgba(42,42,42,0.2);
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+  color: #99CCFF;
+}
+
+.navbar-default {
+  border-color: transparent;
 }
