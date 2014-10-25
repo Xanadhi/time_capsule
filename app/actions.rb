@@ -107,4 +107,40 @@ helpers do
   def current_user
     @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
   end
+
+  def run_claira
+    claira = CleverBot.new
+    puts "claira: #{claira.think 'hi sad today'}"
+    @question = gets.chomp
+    loop do
+      unless @question.downcase == 'buy'
+        print "You: "
+        puts "claira: #{claira.think question}"
+      end
+    end
+  end
+end
+
+set :server, 'thin'
+set :sockets, []
+
+get '/' do
+  claira = claira = CleverBot.new
+  if !request.websocket?
+    erb :index
+  else
+    request.websocket do |ws|
+      ws.onopen do
+        ws.send(claira.think onmessage)
+        settings.sockets << ws
+      end
+      ws.onmessage do |msg|
+        EM.next_tick { settings.sockets.each{|s| s.send(msg) } }
+      end
+      ws.onclose do
+        warn("websocket closed")
+        settings.sockets.delete(ws)
+      end
+    end
+  end
 end
