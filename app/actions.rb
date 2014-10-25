@@ -50,7 +50,20 @@ get '/user_session/logout' do
 end
 
 
-# User profile actions
+
+# Create capsule
+post '/capsules' do
+  @capsule = Capsule.new(
+  letter: params[:editor1]
+  )
+  @capsule.save
+  redirect '/capsules'
+end
+
+get '/capsules' do
+  @capsule = Capsule.new
+  erb :'capsules/new'
+end
 
 get '/users' do
   erb :'users/index'

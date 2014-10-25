@@ -1,6 +1,5 @@
 class Capsule < ActiveRecord::Base
-  validates :text, presence: true
-
+  validates :letter, presence: true
   belongs_to :user
 
 end
