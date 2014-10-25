@@ -74,6 +74,11 @@ end
 get '/users/:id/capsules/:id' do
 end
 
+# Run Claira
+
+get '/claira' do
+  erb :'/claira'
+end
 
 # helpers
 

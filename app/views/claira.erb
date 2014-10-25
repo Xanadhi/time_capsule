@@ -1,0 +1,13 @@
+<script>
+
+$(document).ready(function(){
+  $("#hello").keyup(function(){
+    WORDS.forEach(function(word){
+    x = $("#hello").val().search(word);
+    console.log('find?:  ' +x);
+  //fancybox.open(Claira.run_claira);
+    });
+    
+  });
+});
+</script>
