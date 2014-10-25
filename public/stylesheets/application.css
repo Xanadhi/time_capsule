@@ -1,9 +1,80 @@
 body { 
   padding-top: 70px;
+  background-image: url('http://i.imgur.com/0iujfE0.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #ECECEC;
 }
 
+.btn-sm, .btn-group-sm>.btn {
+  padding: 4px 10px;
+  margin-left: 3px;
+  font-size: 12px;
+  line-height: 1.4;
+  border-radius: 2px;
+}
+
+.btn-default {
+  color: #99CCFF;
+  background-color: rgba(225,225,225,0.2);
+  border-color: transparent;
+}
+
+/* main-wrapper holds the main content of the app */
+
 .main-wrapper {
+  margin: auto;
+  background-color: rgba(42,42,42,0.5);
+  border-radius: 15px;
   width: 60%;
-  outline: 1px dotted black;
   padding: 1em;
+}
+
+.main-wrapper p {
+  color: rgba(225,225,225,1);
+}
+
+/* Navbar styling */
+
+.nav-transparent {
+  background-color: rgba(42,42,42,0.2);
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+  color: #99CCFF;
+}
+
+.navbar-default {
+  border-color: transparent;
+}
+
+.container-fluid>.navbar-collapse {
+margin-right: 10px;
+}
+
+input.transparent-input{
+   background-color:rgba(0,0,0,.1) !important;
+   border:none !important;
+}
+
+.form-group .form-control {
+  color: #ccc;
+}
+
+/* Footer styling */
+.footer-transparent {
+  background-color: rgba(42,42,42,0);
+}
+
+/* User profile */
+
+.spacer {
+    margin-top: 40px;
+}
+
+.pending-capsules {
+  width: 20px;
+  background-color: rgba(42,42,42,0.5);
+  border-radius: 50%;
+  border-color: #ccc;
 }
