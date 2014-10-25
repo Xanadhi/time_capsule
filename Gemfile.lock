@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/neilgupta/cleverbot-api.git
+  revision: 596d4adbde4f67c36bd5d430acea0ad063f7ee6a
+  specs:
+    cleverbot-api (0.0.4)
+      rest-client
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,8 +31,10 @@ GEM
     coderay (1.1.0)
     i18n (0.6.9)
     method_source (0.8.2)
+    mime-types (2.4.3)
     minitest (4.7.5)
     multi_json (1.9.2)
+    netrc (0.8.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -38,6 +47,9 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.1.1)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     ripl (0.7.0)
       bond (~> 0.4.2)
     ripl-multi_line (0.3.1)
@@ -79,6 +91,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  cleverbot-api!
   pry
   puma
   rake

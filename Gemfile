@@ -11,6 +11,8 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 
+gem 'cleverbot-api', git: 'git://github.com/neilgupta/cleverbot-api.git'
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
