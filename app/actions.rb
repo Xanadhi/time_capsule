@@ -1,5 +1,5 @@
 # Homepage (Root path)
-# enable :sessions
+enable :sessions
 
 # helpers do
 #   def current_user
@@ -44,6 +44,7 @@ post '/user_session' do
   user = User.where(email: email, password: password).first
   if user
     session[:user_id] = user.id
+    current_user
     redirect '/'
   else
     erb :'users/new'
