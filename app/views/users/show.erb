@@ -12,6 +12,8 @@
 <div class="row">
 <% @capsules.each do |capsule| %>
   <div class="col-md-4">
-  <%= capsule.created_on %>
+    <%= capsule.letter %>
+    <%= capsule.created_on %>
   </div>
+<% end %>
 </div>
