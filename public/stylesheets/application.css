@@ -38,6 +38,12 @@ body {
 
 /* Navbar styling */
 
+.position-brand {
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+
 .nav-transparent {
   background-color: rgba(42,42,42,0.2);
 }
