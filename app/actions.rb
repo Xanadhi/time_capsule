@@ -1,4 +1,12 @@
 # Homepage (Root path)
+# enable :sessions
+
+# helpers do
+#   def current_user
+#     @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
+#   end
+# end
+
 get '/' do
   erb :index
 end
@@ -27,7 +35,7 @@ end
 # Log in action
 # Singular REST resource. Good example.
 get '/user_session/new' do
-  erb :'user_session/new'
+  erb :'user_sessions/new'
 end
 
 post '/user_session' do
@@ -38,7 +46,7 @@ post '/user_session' do
     session[:user_id] = user.id
     redirect '/'
   else
-    erb :'/user_session/new'
+    erb :'users/new'
   end
 end
 
@@ -49,22 +57,6 @@ get '/user_session/logout' do
   redirect '/'
 end
 
-
-
-# Create capsule
-get '/capsules' do
-  @capsule = Capsule.new
-  erb :'capsules/new'
-end
-
-post '/capsules' do
-  @capsule = Capsule.new(
-  letter: params[:editor1]
-  )
-  @capsule.save
-  redirect '/capsules'
-end
-
 get '/users' do
   erb :'users/index'
 end
@@ -72,6 +64,7 @@ end
 # View a specific user
 get '/users/:id' do
   @user = User.where(user_id: session[:user_id])
+  @capsules = Capsule.where(user_id: session[:user_id])
   erb :'user/show'
 end
 
@@ -85,15 +78,25 @@ end
 # TODO: User can edit account information
 
 # Capsule actions
-
 # Create a new capsule (this is going to be part of the home page)
 post '/capsules' do
+  @capsule = Capsule.new(
+  letter: params[:editor1]
+  )
+  @capsule.save
+  redirect '/capsules'
 end
 
+get '/capsules' do
+  @capsule = Capsule.new
+  erb :'capsules/new'
+end
 
 # View a specific capsule that belongs to the user
-
-
+get '/capsules/:id' do
+  @capsule = Capsule.find(params[:id])
+  erb :'capsules/show'
+end
 # Run Claira
 
 get '/claira' do
@@ -102,8 +105,3 @@ end
 
 # Helpers
 
-helpers do
-  def current_user
-    @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
-  end
-end

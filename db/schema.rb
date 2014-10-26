@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024021905) do
+ActiveRecord::Schema.define(version: 20141026002708) do
 
   create_table "capsules", force: true do |t|
     t.text     "letter"
@@ -22,12 +22,11 @@ ActiveRecord::Schema.define(version: 20141024021905) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "first_name"
     t.string   "email"
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "last_name"
+    t.string   "name"
   end
 
 end
