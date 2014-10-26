@@ -142,23 +142,23 @@ $(function(){
 
 
 $(document).ready(function(){
-  var counter = 0;
-  console.log(editor1);
-  var editable = editor1.editable();
-  $editor1.on('contentDom', function() { editor1.editable().attachListener('keyup', editor1.document, function( evt ){ 
-      WORDS.forEach(function(word){
-        x = $("#editor1").val().toUpperCase().search(word);
-        console.log('find?:  ' +x);
-        if(x != -1){
-          counter += 1;
-        };
-        if(counter > 2){
-          $('#claira_window').modal();
-              return null;
-        };
-    });
-      }); 
-});
+//   var counter = 0;
+//   console.log(editor1);
+//   var editable = editor1.editable();
+//   $editor1.on('contentDom', function() { editor1.editable().attachListener('keyup', editor1.document, function( evt ){ 
+//       WORDS.forEach(function(word){
+//         x = $("#editor1").val().toUpperCase().search(word);
+//         console.log('find?:  ' +x);
+//         if(x != -1){
+//           counter += 1;
+//         };
+//         if(counter > 2){
+//           $('#claira_window').modal();
+//               return null;
+//         };
+//     });
+//       }); 
+// });
   
 
     // $('.claira_button').click(function(){
