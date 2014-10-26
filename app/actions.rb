@@ -64,9 +64,9 @@ end
 
 # View a specific user
 get '/users/:id' do
-  @user = User.where(user_id: session[:user_id])
+  @user = User.where(id: session[:user_id]).first
   @capsules = Capsule.where(user_id: session[:user_id])
-  erb :'user/show'
+  erb :'users/show'
 end
 
 patch '/users/:id' do
