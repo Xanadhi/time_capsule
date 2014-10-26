@@ -12,34 +12,10 @@
 </div>
 
 <div class="row spacer">
-  <div class="col-md-4">
-  <p> This is where the capsules would go. </p>
- </div>
-
-   <div class="col-md-4">
-  <p> This is where the capsules would go. </p>
- </div>
-
-   <div class="col-md-4">
-  <p> This is where the capsules would go. </p>
- </div>
-
-   <div class="col-md-4">
-  <p> This is where the capsules would go. </p>
- </div>
-
-   <div class="col-md-4">
-  <p> This is where the capsules would go. </p>
- </div>
-
-   <div class="col-md-4">
-  <p> This is where the capsules would go. </p>
- </div>
-
-   <div class="col-md-4">
-  <p> This is where the capsules would go. </p>
- </div>
-
-
-
+  <% @capsules.each do |capsule| %>
+    <div class="col-md-4">
+      <%= capsule.letter %>
+      <%= capsule.created_on %>
+    </div>
+  <% end %>
 </div>
