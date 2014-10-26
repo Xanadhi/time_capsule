@@ -78,9 +78,9 @@ WORDS = Array(
     "WOES"
   )
 
-$(function(){
-  CKEDITOR.replace( 'editor1' );
-});
+// $(function(){
+//   CKEDITOR.replace( 'editor1' );
+// });
 
  // Words-triggers from Regressive Imagery Dictionary by Colin Martinedale
  // Sadness part
@@ -116,6 +116,24 @@ $(document).ready(function(){
         };
       });
     });
-  }); 
+  
+
+    // $('.claira_button').click(function(){
+    //     $(this).fadeIn('slow')
+    // });
+
+    var glassUp = false;
+    $(".claira_button").click(function() {
+        if (glassUp) {
+            $(".claira").removeClass("low_opacity");
+            glassUp = false;
+
+        } else {
+            $(".claira").addClass("low_opacity");
+            glassUp = true;
+
+        }
+    });
+    
 });
 

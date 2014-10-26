@@ -121,26 +121,26 @@ helpers do
   end
 end
 
-set :server, 'thin'
-set :sockets, []
+# set :server, 'thin'
+# set :sockets, []
 
-get '/' do
-  claira = claira = CleverBot.new
-  if !request.websocket?
-    erb :index
-  else
-    request.websocket do |ws|
-      ws.onopen do
-        ws.send(claira.think onmessage)
-        settings.sockets << ws
-      end
-      ws.onmessage do |msg|
-        EM.next_tick { settings.sockets.each{|s| s.send(msg) } }
-      end
-      ws.onclose do
-        warn("websocket closed")
-        settings.sockets.delete(ws)
-      end
-    end
-  end
-end
+# get '/' do
+#   claira = claira = CleverBot.new
+#   if !request.websocket?
+#     erb :index
+#   else
+#     request.websocket do |ws|
+#       ws.onopen do
+#         ws.send(claira.think onmessage)
+#         settings.sockets << ws
+#       end
+#       ws.onmessage do |msg|
+#         EM.next_tick { settings.sockets.each{|s| s.send(msg) } }
+#       end
+#       ws.onclose do
+#         warn("websocket closed")
+#         settings.sockets.delete(ws)
+#       end
+#     end
+#   end
+# end

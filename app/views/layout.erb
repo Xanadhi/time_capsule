@@ -45,21 +45,26 @@
       <div class="main-wrapper"> 
         <%= yield %>
       </div>
-      <form >
-        <button style="border-radius: 0%; color: 666;">...
+        <button class="claira_button" style="border-radius: 0%; color: 666;">...
         </button>
         <div id="claira_window" 
           class="modal fade bs-example-modal-lg" 
           tabindex="-1" role="dialog" 
           aria-labelledby="myLargeModalLabel" 
           aria-hidden="true">
+          <iframe 
+          class = "claira"
+          top.location.src="http://localhost:3000" 
+          frameborder="0">
+          </iframe>
+        </div>
 
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
               ...
             </div>
           </div>
-        </div>
+
       </form>
     </div>
   </div>
