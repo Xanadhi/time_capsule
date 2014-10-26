@@ -101,6 +101,10 @@ get '/claira' do
   erb :'/claira'
 end
 
+# get '/iframe' do
+#   erb :'/sinatra-websocket-rack-example/views/index'
+# end
+
 # Helpers
 
 helpers do

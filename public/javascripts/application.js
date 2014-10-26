@@ -134,6 +134,18 @@ $(document).ready(function(){
 
         }
     });
+
+    // $(function() {
+    // $('#super_button').click(function() {
+    //     var url = "http://localhost:3000";
+    //     $('<iframe />', {
+    //         name: 'frame',
+    //         id:   'claira_iframe',
+    //         src: url
+    //     }).appendTo('body');    
+    // });
+    // return false;
+    // });
     
 });
 
