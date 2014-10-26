@@ -7,6 +7,18 @@ body {
   background-color: #ECECEC;
 }
 
+.claira {
+  opacity: 1;
+}
+
+.low_opacity {
+  opacity: 0;
+}
+
+.claira_button {
+  cursor: pointer;
+}
+
 .btn-sm, .btn-group-sm>.btn {
   padding: 4px 10px;
   margin-left: 3px;

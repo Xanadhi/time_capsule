@@ -1,4 +1,4 @@
-class Claira < ActiveRecord::Base
+# class Claira < ActiveRecord::Base
 
   def run_claira
   claira = CleverBot.new
@@ -11,4 +11,4 @@ class Claira < ActiveRecord::Base
     break if question == 'buy'
   end
 
-end
+# end

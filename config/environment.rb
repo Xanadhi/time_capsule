@@ -6,10 +6,12 @@ require 'active_support/all'
 # Load Sinatra Framework (with AR)
 require 'sinatra'
 require 'sinatra/activerecord'
+# require 'sinatra-websocket'
 
 require 'pry'
 
 require 'cleverbot-api'
+
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
@@ -31,9 +33,3 @@ require APP_ROOT.join('config', 'database')
 # Load the routes / actions
 require APP_ROOT.join('app', 'actions')
 
-# WORDS = [
-# SAD = "SAD",
-# SADDEN = "SADDEN",
-# SADLY = "SADLY",
-# SADNES = "SADNES",
-# CAT = "CAT"]
