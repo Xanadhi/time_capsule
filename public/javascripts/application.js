@@ -99,11 +99,53 @@ $(function(){
 // });
 
 
+
+
+// $(document).ready(function(){
+//   var counter = 0;
+//   $('#editor1').keyup(function(){
+//       WORDS.forEach(function(word){
+//         x = $("#editor1").val().toUpperCase().search(word);
+//         console.log('find?:  ' +x);
+//         if(x != -1){
+//           counter += 1;
+//         };
+//         if(counter > 2){
+//           $('#claira_window').modal();
+//               return null;
+//         };
+//       });
+//     });
+
+
+
+
+
+// $(document).ready(function(){
+//   var counter = 0;
+//   CKEDITOR.instances['editor1'].on('contentDom', function(){
+//     CKEDITOR.instances['editor1'].document.on('keyup', function(event) {
+//         document.getElementById("preview").innerHTML = CKEDITOR.instances.editor1.getData();
+//       WORDS.forEach(function(word){
+//         x = $("#editor1").val().toUpperCase().search(word);
+//         console.log('find?:  ' +x);
+//         if(x != -1){
+//           counter += 1;
+//         };
+//         if(counter > 2){
+//           $('#claira_window').modal();
+//               return null;
+//         };
+//       });
+//     });
+//     });
+
+
 $(document).ready(function(){
   var counter = 0;
-  $('#editor1').keyup(function(){
-  // $('#ckeditor textarea').ckeditor(function(editorInstance) {
-  //   $('#ckeditor textarea').ckeditorGet().on('key', function(e) {
+  console.log(editor1);
+  var editable = editor1.editable();
+  $editor1.on('contentDom', function() { editor1.editable().attachListener('keyup', editor1.document, function( evt ){ 
       WORDS.forEach(function(word){
         x = $("#editor1").val().toUpperCase().search(word);
         console.log('find?:  ' +x);
@@ -114,8 +156,39 @@ $(document).ready(function(){
           $('#claira_window').modal();
               return null;
         };
-      });
     });
-  }); 
+      }); 
+});
+  
+
+    // $('.claira_button').click(function(){
+    //     $(this).fadeIn('slow')
+    // });
+
+    var glassUp = false;
+    $(".claira_button").click(function() {
+        if (glassUp) {
+            $(".claira").removeClass("low_opacity");
+            glassUp = false;
+
+        } else {
+            $(".claira").addClass("low_opacity");
+            glassUp = true;
+
+        }
+    });
+
+    // $(function() {
+    // $('#super_button').click(function() {
+    //     var url = "http://localhost:3000";
+    //     $('<iframe />', {
+    //         name: 'frame',
+    //         id:   'claira_iframe',
+    //         src: url
+    //     }).appendTo('body');    
+    // });
+    // return false;
+    // });
+    
 });
 
