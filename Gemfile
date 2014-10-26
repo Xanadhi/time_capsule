@@ -13,6 +13,9 @@ gem 'tux'
 
 gem 'cleverbot-api', git: 'git://github.com/neilgupta/cleverbot-api.git'
 
+gem 'factory_girl'
+gem 'faker'
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
