@@ -1,19 +1,18 @@
 <div class="row">
-  <div class="col-md-6">
-    <p>Hello <%= @user.name %></p>
-    <p><%= @user.email %></p>
-    <p><a href="/users/<%= @user.id %>/edit">update account information</a></p>
+  <div class="col-md-8">
+    <h4><p>Hello, <%= @user.name %><p><small><%= @user.email %></small></h4>
   </div>
-  <div class="col-md-6">
-    <p>Capsules awaiting launch: <%= @capsules.count %></p>
+  <div class="col-md-4">
+    <p>Capsules awaiting launch: <span class="badge"><%= @capsules.count %></span></p>
+     <p><a href="/users/<%= @user.id %>/edit" class="update">update account information</a></p>
   </div>
 </div>
 
 <div class="row">
 <% @capsules.each do |capsule| %>
-  <div class="col-md-4">
-    <a href="/capsules/<%= capsule.id %>"><img src="http://3.bp.blogspot.com/_xOG3auSjUPY/TBFaFQXG1gI/AAAAAAAAF-Y/3Fh0fZ97_TU/s320/tardis+icon+4.PNG">></a>
-    <%= capsule.created_at %>
+  <div id="capsule" class="col-md-4">
+    <a href="/capsules/<%= capsule.id %>" class="grow"><img src="http://3.bp.blogspot.com/_xOG3auSjUPY/TBFaFQXG1gI/AAAAAAAAF-Y/3Fh0fZ97_TU/s320/tardis+icon+4.PNG" class="img-circle"></a>
+    <p>Sent through time at:<br> <%= capsule.created_at %></p>
   </div>
 <% end %>
 </div>

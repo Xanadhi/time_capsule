@@ -82,6 +82,10 @@ $(function(){
   CKEDITOR.replace( 'editor1' );
 });
 
+$(function() {
+    $( "#datepicker" ).datepicker();
+});
+
  // Words-triggers from Regressive Imagery Dictionary by Colin Martinedale
  // Sadness part
  
@@ -113,8 +117,6 @@ $(document).ready(function(){
       });
     });
   });
-
-
 
     // $('.claira_button').click(function(){
     //     $(this).fadeIn('slow')

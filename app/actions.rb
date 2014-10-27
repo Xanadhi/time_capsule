@@ -11,7 +11,7 @@ get '/users/new' do
   erb :'users/new'
 end
 
-post '/users/new' do
+post '/users' do
   @user = User.new(
     name:     params[:name],
     email:    params[:email],
