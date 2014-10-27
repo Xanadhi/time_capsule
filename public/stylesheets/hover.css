@@ -88,8 +88,8 @@
 .pulse:hover, .pulse:focus, .pulse:active {
   -webkit-animation-name: pulse;
   animation-name: pulse;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -154,8 +154,8 @@
 .pulse-shrink:hover, .pulse-shrink:focus, .pulse-shrink:active {
   -webkit-animation-name: pulse-shrink;
   animation-name: pulse-shrink;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
