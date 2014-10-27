@@ -1,14 +1,16 @@
+<% if current_user %>
 <div class="container-fluid">
 
 <p style="text-align: center">Hello, my name is Claira. How are you?</p>
 
 <form action="/capsules" method="post">
-  <textarea id="editor1" name="editor1" rows="10" cols="10"></textarea>
+  <textarea id="editor1" name="editor1" rows="10" cols="10">Today is the tomorrow you worried about yesterday</textarea>
 
   <button type="submit" id="editor1" method="post">
     Send Through Time
   </button>
 </form>
+<% end %>
 
 <!-- @@ index
 <html>

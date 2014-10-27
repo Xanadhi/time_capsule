@@ -1,12 +1,6 @@
 # Homepage (Root path)
 enable :sessions
 
-# helpers do
-#   def current_user
-#     @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
-#   end
-# end
-
 get '/' do
   erb :index
 end
@@ -17,7 +11,7 @@ get '/users/new' do
   erb :'users/new'
 end
 
-post '/users' do
+post '/users/new' do
   @user = User.new(
     name:     params[:name],
     email:    params[:email],
@@ -59,6 +53,7 @@ get '/user_session/logout' do
 end
 
 get '/users' do
+  @current_user
   erb :'users/index'
 end
 
@@ -69,14 +64,23 @@ get '/users/:id' do
   erb :'users/show'
 end
 
-patch '/users/:id' do
-  user = User.find(x)
-  user.password = abc
-  user.save
+# User can edit account information
+get '/users/:id/edit' do
+  @user = User.where(id: session[:user_id]).first
+  erb :'users/update'
+end
+
+post '/users/:id/edit' do
+  @user = User.update( session[:user_id],
+    name:     params[:name],
+    email:    params[:email],
+    password: params[:password]
+    )
+  redirect '/users/:id'
 end
 
 
-# TODO: User can edit account information
+# TODO: 
 
 # Capsule actions
 # Create a new capsule (this is going to be part of the home page)
@@ -147,10 +151,6 @@ get '/claira' do
   erb :'/claira'
 end
 
-# get '/iframe' do
-#   erb :'/sinatra-websocket-rack-example/views/index'
-# end
-
 # Helpers
 
 helpers do
@@ -158,42 +158,7 @@ helpers do
     @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
   end
 
-  def run_claira
-    claira = CleverBot.new
-    puts "claira: #{claira.think 'hi sad today'}"
-    @question = gets.chomp
-    loop do
-      unless @question.downcase == 'buy'
-        print "You: "
-        puts "claira: #{claira.think question}"
-      end
-    end
-  end
 end
     
-
-# set :server, 'thin'
-# set :sockets, []
-
-# get '/' do
-#   claira = claira = CleverBot.new
-#   if !request.websocket?
-#     erb :index
-#   else
-#     request.websocket do |ws|
-#       ws.onopen do
-#         ws.send(claira.think onmessage)
-#         settings.sockets << ws
-#       end
-#       ws.onmessage do |msg|
-#         EM.next_tick { settings.sockets.each{|s| s.send(msg) } }
-#       end
-#       ws.onclose do
-#         warn("websocket closed")
-#         settings.sockets.delete(ws)
-#       end
-#     end
-#   end
-# end
 
 

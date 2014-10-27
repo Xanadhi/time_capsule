@@ -4,6 +4,8 @@ require 'rack'
 require 'rack/websocket'
 require 'sinatra'
 require 'cleverbot-api'
+
+CLAIRA = CleverBot.new
 # require_relative 'claira'
 # require_relative 'claira_layout'
 
@@ -37,7 +39,13 @@ class WebSocketApp < Rack::WebSocket::Application
 	def on_message(env, message)
 		puts "Received message: You #{message}"
 
-		send_data "<span class='server'> You: #{message} </span>"
+		# send_data "<span class='server'> You: #{message} </span>"
+
+		# pass message into cleverbot
+		# get answer
+		# return answer in send_data(answer)
+		answer = CLAIRA.think message
+		send_data answer
 	end
 
 	def on_error(env, error)

@@ -1,0 +1,35 @@
+<h1>Updating Your Profile</h1>
+
+<div class="cols left">
+
+<form action="/users/<%= @user.id %>/edit" method="post">
+
+  <div>
+    <label>Name</label>
+    <input 
+      type="text" 
+      name="name" 
+      value="<%= @user.name %>"/>
+  </div>
+
+  <div>
+    <label>Email</label>
+    <input 
+      type="text" 
+      name="email" 
+      value="<%= @user.email %>"/>
+  </div>
+
+  <div>
+    <label>Password</label>
+    <input 
+      type="password" 
+      name="password"
+      value="<%= @user.password %>"/>
+  </div>
+
+  <div>
+    <input type="submit"/>
+  </div>
+
+</form>
