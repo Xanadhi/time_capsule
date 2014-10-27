@@ -1,12 +1,6 @@
 # Homepage (Root path)
 enable :sessions
 
-# helpers do
-#   def current_user
-#     @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
-#   end
-# end
-
 get '/' do
   erb :index
 end
@@ -69,11 +63,11 @@ get '/users/:id' do
   erb :'users/show'
 end
 
-patch '/users/:id' do
-  user = User.find(x)
-  user.password = abc
-  user.save
-end
+# patch '/users/:id' do
+#   user = User.find(x)
+#   user.password = abc
+#   user.save
+# end
 
 
 # TODO: User can edit account information
