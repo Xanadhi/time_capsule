@@ -1,11 +1,11 @@
-// require 'cleverbot';
+
 
 var websocket_server_ip_address = "127.0.0.1";
 var websocket_server_port_number = "3000";
 var websocket_mount_point = "example";
 
 YUI().use('node', 'event', 'anim', function (Y) {
-
+// d
 	// Select the page element to insert messages into.
 	var messagebox = Y.one("#messages");
 
@@ -51,7 +51,7 @@ YUI().use('node', 'event', 'anim', function (Y) {
 				// Send a greeting message to the server.
 				
 				hwmsg = "Hi";
-				ws.send(hwmsg);
+				//ws.send(hwmsg);
 				messagebox.prepend("<span class='client'>Claira " + hwmsg + "</span><br />");
 				// messagebox.prepend("<span class='client'>Claira " + hwmsg + "</span><br />");
 			}
@@ -99,29 +99,10 @@ YUI().use('node', 'event', 'anim', function (Y) {
 
 				// Add the message to the messagebox.
 
-				// var Cleverbot = @require('cleverbot-api');
-				// var CBots = [new Cleverbot,new Cleverbot]
-				//   , i = 0
-				//   , name = ['Bob Loblaw', 'Stan Sitwell']
-				//   , callback = function callback(resp){
-				//     CBots[i].write(resp['message'],callback);
-				//     console.log(name[i = ( ( i + 1 ) %2)],' : ',  resp['message'])
-				//   };
-				// var claira = new Cleverbot
-				// var answer = "<%= claira = CleverBot.new; q = "#{message}"; claira.think q %>";
-// 				var claira = require('claira');
-// 				claira.render(str, { filename: 'claira' }, function(err, css){
-//   if (err) throw err;
-//   console.log(css);
-// });
-
-				// $claira = new Cleverbot
-				// var answer = function(){"<script><%= run_claira %></script>"};
-				// console.log(answer);
 				answer = "<span class='claira_layout'></span>";
 				// answer = 
 				console.log(answer);
-				messagebox.prepend("<span class='client'>Claira: " + answer + "</span><br />");
+				messagebox.prepend("<span class='client'>You: " + message + "</span><br />");
 
 				// Send the message to the server over the websocket.
 				ws.send(message);
