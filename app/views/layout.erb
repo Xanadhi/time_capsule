@@ -15,12 +15,19 @@
   <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets/application.css">
   <link href="/stylesheets/hover.css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
   
   <!-- Library -->
 
+
+  <!-- Library -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <script src="//cdn.ckeditor.com/4.4.5/standard/ckeditor.js"></script>
   <script src="/javascripts/application.js"></script>
 
@@ -39,7 +46,7 @@
     <div class="col-md-12">
 
       <div class="main-wrapper"> 
-      <button id='super_button' class="claira_button btn-lg pulse" style="border-radius: 0%; color: 666;"> <span class="glyphicon glyphicon-record"></span>
+      <button id='super_button' class="claira_button btn-lg pulse" style="border-radius: 0%; color: 666;" data-toggle="tooltip" data-placement="top" title="Speak to me"> <img src="http://i.imgur.com/fuJS9Zv.png" />
       </button>
         <%= yield %>
       </div>
