@@ -81,10 +81,53 @@ end
 # Capsule actions
 # Create a new capsule (this is going to be part of the home page)
 post '/capsules' do
-  @capsule = Capsule.new(
-  letter: params[:editor1]
+  capsule = Capsule.new(
+    letter: params[:editor1],
+    user_id: current_user.id
   )
-  @capsule.save
+  user = User.find(current_user.id)
+  capsule.save
+  require 'mandrill'
+    mandrill = Mandrill::API.new 'uDeiQ2EexPKL74rTuCs5PQ'
+    message = {"html"=>"#{capsule.letter}",
+     "subject"=>"Your capsule has arrived!",
+     "from_email"=>"claira@lighthouselabs.ca",
+     "from_name"=>"Claira",
+     "to"=>
+        [{"email"=>"#{user.email}",
+            "name"=>"#{user.name}",
+            "type"=>"to"}],
+     "headers"=>{"Reply-To"=>"claira@lighthouselabs.ca"},
+     "important"=>false,
+     "track_opens"=>nil,
+     "track_clicks"=>nil,
+     "auto_text"=>nil,
+     "auto_html"=>nil,
+     "inline_css"=>nil,
+     "url_strip_qs"=>nil,
+     "preserve_recipients"=>nil,
+     "view_content_link"=>nil,
+     "tracking_domain"=>nil,
+     "signing_domain"=>nil,
+     "return_path_domain"=>nil,
+     "merge"=>true,
+     "merge_language"=>"mailchimp",
+     "global_merge_vars"=>[{"name"=>"merge1", "content"=>"merge1 content"}],
+     "merge_vars"=>
+        [{"rcpt"=>"recipient.email@example.com",
+            "vars"=>[{"name"=>"merge2", "content"=>"merge2 content"}]}],
+     "tags"=>["password-resets"],
+     "subaccount"=>"claira_demo"
+   }
+    async = false
+    send_at = "2014-04-16 00:00:00"
+    result = mandrill.messages.send message, async, send_at
+  # rescue Mandrill::Error => e
+  #     # Mandrill errors are thrown as exceptions
+  #     puts "A mandrill error occurred: #{e.class} - #{e.message}"
+  #     # A mandrill error occurred: Mandrill::UnknownSubaccountError - No subaccount exists with the id 'customer-123'    
+  #     raise
+  # end
   redirect '/capsules'
 end
 
@@ -127,6 +170,7 @@ helpers do
     end
   end
 end
+    
 
 # set :server, 'thin'
 # set :sockets, []

@@ -16,8 +16,16 @@ body {
 }
 
 .claira_button {
+  position: absolute;
   cursor: pointer;
-}
+  top: 35px;
+  margin-left: -85px;
+  /*padding: 5px;*/
+  text-decoration: none;
+  /*border-radius: 50%;*/
+  background-color: rgba(225,225,225,0);
+  border: transparent;
+  }
 
 .btn-sm, .btn-group-sm>.btn {
   padding: 4px 10px;

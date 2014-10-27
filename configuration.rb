@@ -2,6 +2,7 @@ require 'active_record'
 require 'factory_girl'
 require 'faker'
 require 'pry'
+require 'mandrill'
 
 ActiveRecord::Base.establish_connection(
   :adapter => 'sqlite3',

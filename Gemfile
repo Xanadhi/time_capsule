@@ -17,7 +17,7 @@ gem 'puma'
 gem 'tux'
 
 gem 'cleverbot-api', git: 'git://github.com/neilgupta/cleverbot-api.git'
-
+gem 'mandrill-api'
 gem 'factory_girl'
 gem 'faker'
 
