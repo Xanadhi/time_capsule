@@ -41,7 +41,7 @@ post '/user_session' do
   if user
     session[:user_id] = user.id
     current_user
-    redirect '/'
+    redirect "/users/#{:id}"
   else
     erb :'users/new'
   end
@@ -95,10 +95,10 @@ post '/capsules' do
   capsule.save
   require 'mandrill'
     mandrill = Mandrill::API.new 'uDeiQ2EexPKL74rTuCs5PQ'
-    message = {"html"=>"#{capsule.letter}",
+    message = {"html"=>"Someone has a message for you ... <hr> #{capsule.letter} <hr> Click here to view your capsule: http://claira.ca/capsule/16",
      "subject"=>"Your capsule has arrived!",
      "from_email"=>"claira@lighthouselabs.ca",
-     "from_name"=>"Claira",
+     "from_name"=>"#{user.name} from the past",
      "to"=>
         [{"email"=>"#{user.email}",
             "name"=>"#{user.name}",
@@ -170,7 +170,7 @@ helpers do
     when 2
       @welcome = "How was your day?"
     when 3
-      @welcome = "Who are you thinking about?"
+      @welcome = "What's on your mind?"
     when 4
       @welcome = "What are you thinking about?"
     when 5
