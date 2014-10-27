@@ -2,6 +2,7 @@
 enable :sessions
 
 get '/' do
+  @message = generate_welcome_message
   erb :index
 end
 
@@ -133,7 +134,8 @@ post '/capsules' do
   #     # A mandrill error occurred: Mandrill::UnknownSubaccountError - No subaccount exists with the id 'customer-123'    
   #     raise
   # end
-  redirect '/capsules'
+  @message = "Your capsule has been stored successfully."
+  erb :index
 end
 
 get '/capsules' do
@@ -157,6 +159,27 @@ end
 helpers do
   def current_user
     @current_user = session[:user_id] ? User.find(session[:user_id]) : nil
+  end
+
+  def generate_welcome_message
+    @welcome = nil
+    a = rand(1..7)
+    case a
+    when 1
+      @welcome = "How are you?"
+    when 2
+      @welcome = "How was your day?"
+    when 3
+      @welcome = "Who are you thinking about?"
+    when 4
+      @welcome = "What are you thinking about?"
+    when 5
+      @welcome = "Write down your dreams."
+    when 6
+      @welcome = "What are you wishing for?"
+    when 7
+      @welcome = "Tell me about your day."
+    end
   end
 
 end

@@ -88,8 +88,8 @@
 .pulse:hover, .pulse:focus, .pulse:active {
   -webkit-animation-name: pulse;
   animation-name: pulse;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
