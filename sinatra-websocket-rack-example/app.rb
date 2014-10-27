@@ -13,3 +13,7 @@ get '/' do
 
 	haml :index
 end
+
+get 'ask_claira' do
+   json
+end
