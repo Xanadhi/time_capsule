@@ -11,7 +11,7 @@ get '/users/new' do
   erb :'users/new'
 end
 
-post '/users/new' do
+post '/users' do
   @user = User.new(
     name:     params[:name],
     email:    params[:email],
@@ -19,6 +19,7 @@ post '/users/new' do
     )
   if @user.valid?
     @user.save
+    session[:user_id] = @user.id
     current_user
     redirect '/'
   else

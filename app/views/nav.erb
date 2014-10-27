@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><img class="position-brand float" src="http://i.imgur.com/qwggblQ.png" /></a> 
+      <a class="navbar-brand" href="/"><img class="position-brand pulse-shrink" src="http://i.imgur.com/qwggblQ.png" /></a> 
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -22,25 +22,7 @@
       <% end %>
 
       <% unless current_user %>
-      <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create account</a>
-        <ul class="dropdown-menu" role="menu">
-
-          <li><form action="/users/new" method="post">
-          <div class="form-group">
-
-            <input type="text" name="name" class="form-control" placeholder="name"> 
-
-            <input type="text" name="email" class="form-control" placeholder="email">
-
-            <input type="password" name="password" class="form-control" placeholder="password">
-
-            <button type="submit" class="btn btn-default">create</button>
-            
-          </div>
-          </form></li>
-        </ul>
-      </li>
+      <li><a href="/users/new">Create account</a></li>
       <% end %>
 
       <% unless current_user %>
