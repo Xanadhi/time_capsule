@@ -11,7 +11,7 @@ get '/users/new' do
   erb :'users/new'
 end
 
-post '/users' do
+post '/users/new' do
   @user = User.new(
     name:     params[:name],
     email:    params[:email],
@@ -53,6 +53,7 @@ get '/user_session/logout' do
 end
 
 get '/users' do
+  @current_user
   erb :'users/index'
 end
 
@@ -63,20 +64,30 @@ get '/users/:id' do
   erb :'users/show'
 end
 
-# patch '/users/:id' do
-#   user = User.find(x)
-#   user.password = abc
-#   user.save
-# end
+# User can edit account information
+get '/users/:id/edit' do
+  @user = User.where(id: session[:user_id]).first
+  erb :'users/update'
+end
+
+post '/users/:id/edit' do
+  @user = User.update( session[:user_id],
+    name:     params[:name],
+    email:    params[:email],
+    password: params[:password]
+    )
+  redirect '/users/:id'
+end
 
 
-# TODO: User can edit account information
+# TODO: 
 
 # Capsule actions
 # Create a new capsule (this is going to be part of the home page)
 post '/capsules' do
   @capsule = Capsule.new(
-  letter: params[:editor1]
+  letter: params[:editor1],
+  user_id: current_user
   )
   @capsule.save
   redirect '/capsules'
