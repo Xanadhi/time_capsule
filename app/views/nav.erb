@@ -15,6 +15,13 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">About</a></li>
 
+      <% if current_user %>
+      <li><a href="/users/<%= current_user.id %>">Profile</a></li>
+
+      <li><a href="/user_session/logout">Log out</a></li>
+      <% end %>
+
+      <% unless current_user %>
       <li class="dropdown">
        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create account</a>
         <ul class="dropdown-menu" role="menu">
@@ -27,16 +34,10 @@
           </form></li>
         </ul>
       </li>
-
-      <% if current_user %>
-      <li><a href="/user_session/logout">Log out</a></li>
-      <% end %>
-
-      <% if current_user %>
-      <li><a href="/users/:id">Profile</a></li>
       <% end %>
 
       <% unless current_user %>
+
       <form action="/user_session" method="post" class="navbar-form navbar-right" role="login">
       <div class="form-group">
       <input type="text" class="form-control input-sm login_form transparent-input" name="email" placeholder="email">
@@ -44,6 +45,7 @@
       </div>
       <button type="submit" class="btn btn-default btn-sm">Log in</button>
       </form>
+
       <% end %>
 
 

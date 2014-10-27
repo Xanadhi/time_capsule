@@ -1,0 +1,41 @@
+<h1>Updating Your Profile</h1>
+
+<div class="cols right">
+  <label>Username</label><br>
+  <label>Email</label><br>
+  <label>Password</label><br>
+</div>
+
+<div class="cols left">
+
+<form action="/users" id="new-event" method="post">
+
+  <div>
+    <input 
+      type="text" 
+      name="name" 
+      value="<%= @user && @user.name %>"/>
+  </div>
+
+  <div>
+    <input 
+      type="text" 
+      name="email" 
+      value="<%= @user && @user.email %>"/>
+  </div>
+
+  <div>
+    <input 
+      type="password" 
+      name="password"
+      placeholder="*******"
+      value="<%= @user && @user.password %>"/>
+  </div>
+
+  <div>
+    <input type="submit"/>
+  </div>
+
+  <input name="invisble" style="display:none;">
+
+</form>
