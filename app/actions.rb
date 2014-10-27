@@ -19,6 +19,7 @@ post '/users' do
     )
   if @user.valid?
     @user.save
+    session[:user_id] = @user.id
     current_user
     redirect '/'
   else
