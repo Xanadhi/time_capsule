@@ -91,7 +91,7 @@ $(function(){
                 {"name":"about","groups":["about"]}
             ],
             // Remove the redundant buttons from toolbar groups defined above.
-            removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Source'
+            removeButtons: 'Subscript,Superscript,Anchor,Styles,Specialchar,Source'
         } ); 
 });
 
@@ -130,6 +130,7 @@ $(document).ready(function(){
       });
     });
   });
+
 
     // $('.claira_button').click(function(){
     //     $(this).fadeIn('slow')

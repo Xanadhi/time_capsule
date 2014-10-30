@@ -8,7 +8,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 # require 'sinatra-websocket'
 
-require 'pry'
+require 'pry' if development?
 
 require 'cleverbot-api'
 
