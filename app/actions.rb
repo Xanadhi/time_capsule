@@ -41,7 +41,7 @@ post '/user_session' do
   if user
     session[:user_id] = user.id
     current_user
-    redirect '/'
+    redirect "/users/#{:id}"
   else
     erb :'users/new'
   end

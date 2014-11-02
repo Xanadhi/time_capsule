@@ -44,6 +44,7 @@ class WebSocketApp < Rack::WebSocket::Application
 		# pass message into cleverbot
 		# get answer
 		# return answer in send_data(answer)
+		CLAIRA.name = "Claira"
 		answer = CLAIRA.think message
 		send_data answer
 	end

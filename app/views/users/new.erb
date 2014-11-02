@@ -10,37 +10,38 @@
   </div>
 <% end %>
 
+<form role="form" action="/users" method="post">
 
-<div class="cols right">
-  <label>Username</label><br>
-  <label>Email</label><br>
-  <label>Password</label><br>
-  </div>
-<div class="cols left">
-
-<form action="/users" method="post">
-
-  <div>
+  <div class="form-group">
+    <label for="name">Name</label>
     <input 
       type="text" 
-      name="name" 
+      class="form-control" 
+      id="name"
+      name="name"
       value="<%= @user && @user.name %>"/>
   </div>
-  <div>
+  <div class="form-group">
+    <label for="email">Email address</label>
     <input 
-      type="text" 
+      type="text"
+      class="form-control" 
+      id="email"       
       name="email" 
       value="<%= @user && @user.email %>"/>
   </div>
-  <div>
+  <div class="form-group">
+    <label for="password">Password</label>
     <input 
       type="password" 
+      class="form-control" 
+      id="password"
       name="password"
       placeholder="*******"
       value="<%= @user && @user.password %>"/>
   </div>
   <div>
-    <input type="submit"/>
+    <button type="submit" class="btn btn-default">Submit</button>
   </div>
 
   <input name="invisble" style="display:none;">
