@@ -95,7 +95,7 @@ post '/capsules' do
   capsule.save
   require 'mandrill'
     mandrill = Mandrill::API.new 'uDeiQ2EexPKL74rTuCs5PQ'
-    message = {"html"=>"Someone has a message for you ... <hr> #{capsule.letter} <hr> Click here to view your capsule: http://claira.ca/capsule/16",
+    message = {"html"=>"Someone has a message for you ... <hr> #{capsule.letter} <hr> Click here to view your capsule: http://claira.ca/capsule/#{capsule.id}",
      "subject"=>"Your capsule has arrived!",
      "from_email"=>"claira@lighthouselabs.ca",
      "from_name"=>"#{user.name} from the past",
